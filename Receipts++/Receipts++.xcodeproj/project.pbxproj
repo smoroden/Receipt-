@@ -15,6 +15,11 @@
 		582A106E1CF7722A00BE7493 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 582A106D1CF7722A00BE7493 /* Assets.xcassets */; };
 		582A10711CF7722A00BE7493 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 582A106F1CF7722A00BE7493 /* LaunchScreen.storyboard */; };
 		582A10801CF77B2B00BE7493 /* AddReceiptsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582A107F1CF77B2B00BE7493 /* AddReceiptsViewController.m */; };
+		582A10821CF7822200BE7493 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 582A10811CF7822200BE7493 /* CoreData.framework */; };
+		582A109A1CF7916C00BE7493 /* Tag+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 582A10931CF7916C00BE7493 /* Tag+CoreDataProperties.m */; };
+		582A109B1CF7916C00BE7493 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 582A10951CF7916C00BE7493 /* Tag.m */; };
+		582A109C1CF7916C00BE7493 /* Receipt+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 582A10971CF7916C00BE7493 /* Receipt+CoreDataProperties.m */; };
+		582A109D1CF7916C00BE7493 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = 582A10991CF7916C00BE7493 /* Receipt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,15 @@
 		582A10721CF7722A00BE7493 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		582A107E1CF77B2B00BE7493 /* AddReceiptsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddReceiptsViewController.h; sourceTree = "<group>"; };
 		582A107F1CF77B2B00BE7493 /* AddReceiptsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddReceiptsViewController.m; sourceTree = "<group>"; };
+		582A10811CF7822200BE7493 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		582A10921CF7916C00BE7493 /* Tag+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tag+CoreDataProperties.h"; path = "../Tag+CoreDataProperties.h"; sourceTree = "<group>"; };
+		582A10931CF7916C00BE7493 /* Tag+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Tag+CoreDataProperties.m"; path = "../Tag+CoreDataProperties.m"; sourceTree = "<group>"; };
+		582A10941CF7916C00BE7493 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = ../Tag.h; sourceTree = "<group>"; };
+		582A10951CF7916C00BE7493 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = ../Tag.m; sourceTree = "<group>"; };
+		582A10961CF7916C00BE7493 /* Receipt+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Receipt+CoreDataProperties.h"; path = "../Receipt+CoreDataProperties.h"; sourceTree = "<group>"; };
+		582A10971CF7916C00BE7493 /* Receipt+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Receipt+CoreDataProperties.m"; path = "../Receipt+CoreDataProperties.m"; sourceTree = "<group>"; };
+		582A10981CF7916C00BE7493 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Receipt.h; path = ../Receipt.h; sourceTree = "<group>"; };
+		582A10991CF7916C00BE7493 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Receipt.m; path = ../Receipt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582A10821CF7822200BE7493 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +62,7 @@
 		582A10521CF7722A00BE7493 = {
 			isa = PBXGroup;
 			children = (
+				582A10811CF7822200BE7493 /* CoreData.framework */,
 				582A105D1CF7722A00BE7493 /* Receipts++ */,
 				582A105C1CF7722A00BE7493 /* Products */,
 			);
@@ -93,6 +109,14 @@
 		582A107A1CF7726600BE7493 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				582A10921CF7916C00BE7493 /* Tag+CoreDataProperties.h */,
+				582A10931CF7916C00BE7493 /* Tag+CoreDataProperties.m */,
+				582A10941CF7916C00BE7493 /* Tag.h */,
+				582A10951CF7916C00BE7493 /* Tag.m */,
+				582A10961CF7916C00BE7493 /* Receipt+CoreDataProperties.h */,
+				582A10971CF7916C00BE7493 /* Receipt+CoreDataProperties.m */,
+				582A10981CF7916C00BE7493 /* Receipt.h */,
+				582A10991CF7916C00BE7493 /* Receipt.m */,
 				582A10611CF7722A00BE7493 /* AppDelegate.h */,
 				582A10621CF7722A00BE7493 /* AppDelegate.m */,
 			);
@@ -197,11 +221,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582A109A1CF7916C00BE7493 /* Tag+CoreDataProperties.m in Sources */,
 				582A106C1CF7722A00BE7493 /* Receipts__.xcdatamodeld in Sources */,
 				582A10801CF77B2B00BE7493 /* AddReceiptsViewController.m in Sources */,
+				582A109B1CF7916C00BE7493 /* Tag.m in Sources */,
 				582A10661CF7722A00BE7493 /* ViewController.m in Sources */,
 				582A10631CF7722A00BE7493 /* AppDelegate.m in Sources */,
+				582A109C1CF7916C00BE7493 /* Receipt+CoreDataProperties.m in Sources */,
 				582A10601CF7722A00BE7493 /* main.m in Sources */,
+				582A109D1CF7916C00BE7493 /* Receipt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

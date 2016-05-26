@@ -7,6 +7,9 @@
 //
 
 #import "ViewController.h"
+#import <CoreData/CoreData.h>
+#import "Receipt.h"
+#import "Tag.h"
 
 
 static NSString * const kReceiptCellReuseIdentifier = @"Cell";
@@ -14,6 +17,7 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic) NSArray *receipts;
 
 @end
 
@@ -24,7 +28,49 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
 #pragma mark - ViewController Lifecycle -
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self refreshReceipts];
+    
+    [self newReciept];
+    
+}
+
+#pragma mark - General Methods -
+-(void)refreshReceipts {
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"", ];
+//    [fetchRequest setPredicate:predicate];
+    // Specify how the fetched objects should be sorted
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp"
+                                                                   ascending:YES];
+    [fetchRequest setSortDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
+    
+    NSError *error = nil;
+    self.receipts = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (self.receipts == nil) {
+        NSLog(@"Error making the fetch");
+    }
+    
+    [self.tableView reloadData];
+}
+
+-(void)newReciept {
+    
+    Receipt *newReceipt = [NSEntityDescription insertNewObjectForEntityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+    
+    newReceipt.note = @"a test note";
+    newReceipt.amount = 50.0;
+//    newReceipt.tags
+    
+    NSError *error;
+    
+    [self.managedObjectContext save:&error];
+    
+    
 }
 
 #pragma mark - Actions -
@@ -39,7 +85,7 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     
-    return 1;
+    return self.receipts.count;
 }
 
 
@@ -48,7 +94,8 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:kReceiptCellReuseIdentifier];
     
-    cell.textLabel.text = @"test";
+    Receipt *receipt = self.receipts[indexPath.row];
+    cell.textLabel.text = receipt.note;
     
     return cell;
 }
