@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AddReceiptsViewController.h
 //  Receipts++
 //
 //  Created by Zach Smoroden on 2016-05-26.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+@interface AddReceiptsViewController : UIViewController
 
 @end
-
