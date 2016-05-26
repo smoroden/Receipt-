@@ -50,6 +50,12 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
     
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self refreshReceipts];
+}
+
 #pragma mark - Segues -
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -90,7 +96,7 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
     newReceipt.note = @"a test note";
     newReceipt.amount = 50.0;
     
-    newReceipt.timeStamp = [[NSDate date]timeIntervalSinceReferenceDate] ;
+    newReceipt.timeStamp = [NSDate date] ;
     
     [newReceipt addTagsObject:self.tags[arc4random_uniform(self.tags.count)]];
     

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) double amount;
 @property (nullable, nonatomic, retain) NSString *note;
-@property (nonatomic) NSTimeInterval timeStamp;
+@property (nonatomic) NSDate* timeStamp;
 @property (nullable, nonatomic, retain) NSSet<Tag *> *tags;
 
 @end

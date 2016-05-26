@@ -9,11 +9,12 @@
 #import "AddReceiptsViewController.h"
 #import <CoreData/CoreData.h>
 #import "Tag.h"
+#import "Receipt.h"
 
 static NSString * const kCategoryCellReuseIdentifier = @"CategoryCell";
 
 
-@interface AddReceiptsViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface AddReceiptsViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UITextField *amountTextField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionTextField;
@@ -28,6 +29,8 @@ static NSString * const kCategoryCellReuseIdentifier = @"CategoryCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.amountTextField.delegate = self;
+    self.descriptionTextField.delegate = self;
 }
 
 
@@ -68,11 +71,44 @@ static NSString * const kCategoryCellReuseIdentifier = @"CategoryCell";
 #pragma mark - Actions -
 - (IBAction)addReceipt:(UIButton *)sender {
     
+    Receipt *newReceipt = [NSEntityDescription insertNewObjectForEntityForName:@"Receipt" inManagedObjectContext:self.managedObjectContext];
+    
+    newReceipt.note = self.descriptionTextField.text;
+    newReceipt.amount = [self.amountTextField.text doubleValue];
+    newReceipt.timeStamp = self.datePicker.date;
+    
+    NSMutableSet *tagsToAdd = [NSMutableSet set];
+    
+    for (NSIndexPath *path in [self.categoryTableView indexPathsForSelectedRows]) {
+        [tagsToAdd addObject:self.tags[path.row]];
+    }
+    
+    [newReceipt addTags:tagsToAdd];
+    
+    NSError *error;
+    [self.managedObjectContext save:&error];
+    
+    if(!error) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
     
 }
 - (IBAction)cancel:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UITextFieldDelegate -
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    
+    return [textField resignFirstResponder];
+}
+
+#pragma mark - General Methods -
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:NO];
+}
 
 @end
