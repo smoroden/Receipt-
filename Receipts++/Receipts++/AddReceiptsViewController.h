@@ -10,4 +10,6 @@
 
 @interface AddReceiptsViewController : UIViewController
 
+@property (nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
