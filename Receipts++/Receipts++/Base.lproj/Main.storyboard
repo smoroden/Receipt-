@@ -82,7 +82,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="AMOUNT" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FF7-QZ-iWy">
                                 <rect key="frame" x="14" y="85" width="240" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DESCRIPTION" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5kg-u7-WLU">
                                 <rect key="frame" x="14" y="123" width="240" height="30"/>
@@ -121,21 +121,15 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EMj-FW-Est">
-                                <rect key="frame" x="240" y="562" width="48" height="30"/>
+                                <rect key="frame" x="0.0" y="556" width="300" height="44"/>
                                 <color key="backgroundColor" red="0.77063596248626709" green="0.420310378074646" blue="0.32268849015235901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="omq-S2-akc"/>
+                                </constraints>
                                 <color key="tintColor" red="0.99990516901016235" green="1" blue="0.99987047910690308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancel:" destination="0hQ-Df-Ygc" eventType="touchUpInside" id="333-8D-VJP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnk-Ke-afh">
-                                <rect key="frame" x="304" y="562" width="30" height="30"/>
-                                <color key="backgroundColor" red="0.6809002161026001" green="0.86258095502853394" blue="0.52316874265670776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.99990516901016235" green="1" blue="0.99987047910690308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Add"/>
-                                <connections>
-                                    <action selector="addReceipt:" destination="0hQ-Df-Ygc" eventType="touchUpInside" id="K1n-f0-kPp"/>
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="idp-gw-H0R">
@@ -144,24 +138,38 @@
                                     <!--2016-05-26 22:03:48 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnk-Ke-afh">
+                                <rect key="frame" x="300" y="556" width="300" height="44"/>
+                                <color key="backgroundColor" red="0.6809002161026001" green="0.86258095502853394" blue="0.52316874265670776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="pXn-Sn-CEe"/>
+                                </constraints>
+                                <color key="tintColor" red="0.99990516901016235" green="1" blue="0.99987047910690308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addReceipt:" destination="0hQ-Df-Ygc" eventType="touchUpInside" id="K1n-f0-kPp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5kg-u7-WLU" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.4" id="1V5-HR-6UQ"/>
-                            <constraint firstItem="KSu-s2-GF5" firstAttribute="top" secondItem="EMj-FW-Est" secondAttribute="bottom" constant="8" id="2Zc-sJ-UdC"/>
+                            <constraint firstItem="KSu-s2-GF5" firstAttribute="top" secondItem="EMj-FW-Est" secondAttribute="bottom" id="2Zc-sJ-UdC"/>
                             <constraint firstItem="FF7-QZ-iWy" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.4" id="3JV-1b-ahr"/>
-                            <constraint firstItem="KSu-s2-GF5" firstAttribute="top" secondItem="wnk-Ke-afh" secondAttribute="bottom" constant="8" id="404-fm-gPY"/>
+                            <constraint firstItem="KSu-s2-GF5" firstAttribute="top" secondItem="wnk-Ke-afh" secondAttribute="bottom" id="404-fm-gPY"/>
                             <constraint firstItem="5kg-u7-WLU" firstAttribute="top" secondItem="FF7-QZ-iWy" secondAttribute="bottom" constant="8" id="98a-Lv-hCd"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" id="DLm-b9-f47"/>
+                            <constraint firstItem="wnk-Ke-afh" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="GkH-AI-G0K"/>
                             <constraint firstItem="5kg-u7-WLU" firstAttribute="leading" secondItem="IPd-fD-Jh2" secondAttribute="leadingMargin" constant="-6" id="JVj-1r-ZHC"/>
                             <constraint firstItem="FF7-QZ-iWy" firstAttribute="leading" secondItem="IPd-fD-Jh2" secondAttribute="leadingMargin" constant="-6" id="KcW-KL-Xcp"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="top" secondItem="Wlk-HX-Es2" secondAttribute="bottom" constant="8" id="N4T-77-gly"/>
                             <constraint firstItem="Wlk-HX-Es2" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="Sg1-4f-BZ0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wlk-HX-Es2" secondAttribute="trailing" id="Uos-ww-zgW"/>
-                            <constraint firstItem="EMj-FW-Est" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="-36" id="bFw-ZV-KYO"/>
-                            <constraint firstItem="wnk-Ke-afh" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="19" id="bV4-Ux-dRc"/>
+                            <constraint firstItem="EMj-FW-Est" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="-150" id="bFw-ZV-KYO"/>
+                            <constraint firstItem="wnk-Ke-afh" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="150" id="bV4-Ux-dRc"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" id="gL6-ms-jT9"/>
                             <constraint firstItem="Wlk-HX-Es2" firstAttribute="top" secondItem="Fix-Qz-95M" secondAttribute="bottom" constant="65" id="iSm-15-njl"/>
+                            <constraint firstItem="EMj-FW-Est" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="pHi-Fn-LTF"/>
                             <constraint firstItem="FF7-QZ-iWy" firstAttribute="top" secondItem="Fix-Qz-95M" secondAttribute="bottom" constant="65" id="qOU-iN-VTZ"/>
                         </constraints>
                     </view>

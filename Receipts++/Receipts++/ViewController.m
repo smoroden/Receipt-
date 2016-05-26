@@ -44,7 +44,7 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
     
     
     
-    [self newReciept];
+    //[self newReciept];
     
     
     
