@@ -64,13 +64,34 @@ static NSString * const kReceiptCellReuseIdentifier = @"Cell";
     
     newReceipt.note = @"a test note";
     newReceipt.amount = 50.0;
-//    newReceipt.tags
+//    newReceipt.tags =
     
+    [self save];
+    
+    [self refreshReceipts];
+    
+    
+}
+
+-(void)setupTags {
+    
+    NSArray *names = @[@"Business", @"Personal", @"Family"];
+    
+    for (NSString *name in names) {
+        Tag *newTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+        newTag.tagName = name;
+    }
+    [self save];
+    
+}
+
+-(void)save {
     NSError *error;
     
     [self.managedObjectContext save:&error];
     
-    
+    if(error)
+        NSLog(@"There was an error: %@", error.description);
 }
 
 #pragma mark - Actions -
