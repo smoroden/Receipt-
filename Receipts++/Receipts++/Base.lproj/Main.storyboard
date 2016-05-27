@@ -169,15 +169,16 @@
                             <constraint firstItem="KSu-s2-GF5" firstAttribute="top" secondItem="wnk-Ke-afh" secondAttribute="bottom" id="404-fm-gPY"/>
                             <constraint firstItem="5kg-u7-WLU" firstAttribute="top" secondItem="FF7-QZ-iWy" secondAttribute="bottom" constant="8" id="98a-Lv-hCd"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" id="DLm-b9-f47"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wnk-Ke-afh" secondAttribute="trailing" constant="-20" id="DnC-6S-M5Y"/>
                             <constraint firstItem="wnk-Ke-afh" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="GkH-AI-G0K"/>
                             <constraint firstItem="5kg-u7-WLU" firstAttribute="leading" secondItem="IPd-fD-Jh2" secondAttribute="leadingMargin" constant="-6" id="JVj-1r-ZHC"/>
                             <constraint firstItem="FF7-QZ-iWy" firstAttribute="leading" secondItem="IPd-fD-Jh2" secondAttribute="leadingMargin" constant="-6" id="KcW-KL-Xcp"/>
+                            <constraint firstItem="EMj-FW-Est" firstAttribute="leading" secondItem="IPd-fD-Jh2" secondAttribute="leadingMargin" constant="-20" id="Mfs-cM-aEX"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="top" secondItem="Wlk-HX-Es2" secondAttribute="bottom" constant="8" id="N4T-77-gly"/>
                             <constraint firstItem="K69-8e-yyg" firstAttribute="top" secondItem="Fix-Qz-95M" secondAttribute="bottom" id="Qqo-QN-kFb"/>
                             <constraint firstItem="Wlk-HX-Es2" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="Sg1-4f-BZ0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wlk-HX-Es2" secondAttribute="trailing" id="Uos-ww-zgW"/>
                             <constraint firstItem="EMj-FW-Est" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="-150" id="bFw-ZV-KYO"/>
-                            <constraint firstItem="wnk-Ke-afh" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="150" id="bV4-Ux-dRc"/>
                             <constraint firstItem="FF7-QZ-iWy" firstAttribute="top" secondItem="K69-8e-yyg" secondAttribute="bottom" constant="8" id="g5T-Hm-0eP"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" id="gL6-ms-jT9"/>
                             <constraint firstItem="Wlk-HX-Es2" firstAttribute="top" secondItem="K69-8e-yyg" secondAttribute="bottom" constant="8" id="iQo-Pp-hgJ"/>
@@ -185,6 +186,11 @@
                             <constraint firstItem="EMj-FW-Est" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="pHi-Fn-LTF"/>
                             <constraint firstItem="K69-8e-yyg" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" id="yPy-9b-22x"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bFw-ZV-KYO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="amountTextField" destination="FF7-QZ-iWy" id="1mo-jS-JgQ"/>
