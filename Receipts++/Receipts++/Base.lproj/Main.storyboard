@@ -132,12 +132,6 @@
                                     <action selector="cancel:" destination="0hQ-Df-Ygc" eventType="touchUpInside" id="333-8D-VJP"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="idp-gw-H0R">
-                                <rect key="frame" x="0.0" y="250" width="600" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="485993028.61966801">
-                                    <!--2016-05-26 22:03:48 +0000-->
-                                </date>
-                            </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnk-Ke-afh">
                                 <rect key="frame" x="300" y="556" width="300" height="44"/>
                                 <color key="backgroundColor" red="0.6809002161026001" green="0.86258095502853394" blue="0.52316874265670776" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -150,6 +144,22 @@
                                     <action selector="addReceipt:" destination="0hQ-Df-Ygc" eventType="touchUpInside" id="K1n-f0-kPp"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="idp-gw-H0R">
+                                <rect key="frame" x="0.0" y="250" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="485993028.61966801">
+                                    <!--2016-05-26 22:03:48 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add A Receipt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K69-8e-yyg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="57"/>
+                                <color key="backgroundColor" red="0.91236394643783569" green="0.59096455574035645" blue="0.50159925222396851" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="adD-T4-THq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                <color key="textColor" red="0.99963909387588501" green="1" blue="0.99975615739822388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -163,14 +173,17 @@
                             <constraint firstItem="5kg-u7-WLU" firstAttribute="leading" secondItem="IPd-fD-Jh2" secondAttribute="leadingMargin" constant="-6" id="JVj-1r-ZHC"/>
                             <constraint firstItem="FF7-QZ-iWy" firstAttribute="leading" secondItem="IPd-fD-Jh2" secondAttribute="leadingMargin" constant="-6" id="KcW-KL-Xcp"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="top" secondItem="Wlk-HX-Es2" secondAttribute="bottom" constant="8" id="N4T-77-gly"/>
+                            <constraint firstItem="K69-8e-yyg" firstAttribute="top" secondItem="Fix-Qz-95M" secondAttribute="bottom" id="Qqo-QN-kFb"/>
                             <constraint firstItem="Wlk-HX-Es2" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="Sg1-4f-BZ0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Wlk-HX-Es2" secondAttribute="trailing" id="Uos-ww-zgW"/>
                             <constraint firstItem="EMj-FW-Est" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="-150" id="bFw-ZV-KYO"/>
                             <constraint firstItem="wnk-Ke-afh" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" constant="150" id="bV4-Ux-dRc"/>
+                            <constraint firstItem="FF7-QZ-iWy" firstAttribute="top" secondItem="K69-8e-yyg" secondAttribute="bottom" constant="8" id="g5T-Hm-0eP"/>
                             <constraint firstItem="idp-gw-H0R" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" id="gL6-ms-jT9"/>
-                            <constraint firstItem="Wlk-HX-Es2" firstAttribute="top" secondItem="Fix-Qz-95M" secondAttribute="bottom" constant="65" id="iSm-15-njl"/>
+                            <constraint firstItem="Wlk-HX-Es2" firstAttribute="top" secondItem="K69-8e-yyg" secondAttribute="bottom" constant="8" id="iQo-Pp-hgJ"/>
+                            <constraint firstItem="K69-8e-yyg" firstAttribute="centerX" secondItem="IPd-fD-Jh2" secondAttribute="centerX" id="ogH-Pm-aI0"/>
                             <constraint firstItem="EMj-FW-Est" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" multiplier="0.5" id="pHi-Fn-LTF"/>
-                            <constraint firstItem="FF7-QZ-iWy" firstAttribute="top" secondItem="Fix-Qz-95M" secondAttribute="bottom" constant="65" id="qOU-iN-VTZ"/>
+                            <constraint firstItem="K69-8e-yyg" firstAttribute="width" secondItem="IPd-fD-Jh2" secondAttribute="width" id="yPy-9b-22x"/>
                         </constraints>
                     </view>
                     <connections>
